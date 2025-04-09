@@ -2,7 +2,7 @@ export default async function robotAction(chatLog, setChatLog, setLoading) {
   setLoading(true);
   setTimeout(async () => {
     console.log("disabled for now");
-
+    /*
     let timestamp = Date.now(); // This would be the timestamp you want to format
     timestamp = new Intl.DateTimeFormat("en-US", {
       year: "numeric",
@@ -45,6 +45,7 @@ export default async function robotAction(chatLog, setChatLog, setLoading) {
       .catch((err) => {
         console.error(err);
       });
+      */
     setLoading(false);
   }, 3000);
 }
