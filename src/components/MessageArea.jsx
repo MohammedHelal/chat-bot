@@ -75,7 +75,7 @@ function MessageArea({ language, message, setMessage, chatLog, setChatLog }) {
           id="message"
           name="message"
           rows="2"
-          cols="50"
+          cols="40"
           placeholder={`${language === "EN" ? "Write a message" : "أكتب سؤال"}`}
           value={message}
           onChange={messageChangeHandler}

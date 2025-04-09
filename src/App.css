@@ -1,7 +1,7 @@
 .main {
   margin: 0 auto;
   padding: 0;
-  width: 400px;
+  width: 375px;
   height: 500px;
   background-color: aliceblue;
   border-radius: 15px;
@@ -80,7 +80,7 @@ main {
   font-weight: 500;
   padding: 5px 10px;
   margin-bottom: 2.5px;
-  max-width: 350px;
+  max-width: 275px;
   text-wrap: wrap;
   word-wrap: break-word;
 }
