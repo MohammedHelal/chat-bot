@@ -45,5 +45,5 @@ export default async function robotAction(chatLog, setChatLog, setLoading) {
         console.error(err);
       });
     setLoading(false);
-  }, 3000);
+  }, 1000);
 }
