@@ -193,4 +193,8 @@ main {
   .chat {
     max-width: 260px;
   }
+
+  .message-area {
+    padding: 10px 5px;
+  }
 }
