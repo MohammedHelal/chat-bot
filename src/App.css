@@ -101,14 +101,14 @@ main {
 }
 
 .name-timestamp {
+  margin: 0;
   font-weight: 600;
   color: #2a6775;
   display: flex;
 }
 
-.arabic p {
+.name-timestamp > p {
   margin: 0;
-  color: #2a6775;
   margin-left: 5px;
 }
 
