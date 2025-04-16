@@ -69,6 +69,7 @@ function App() {
       let newDate = new Date(date.setMonth(date.getMonth() + 6));
 
       createCookie("sessionkey", uuid, newDate);
+      setSessionId(uuid);
     }
   }, []);
 
