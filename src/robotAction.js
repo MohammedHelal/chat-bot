@@ -1,4 +1,9 @@
-export default async function robotAction(chatLog, setChatLog, setLoading) {
+export default async function robotAction(
+  chatLog,
+  setChatLog,
+  setLoading,
+  sessionId
+) {
   setLoading(true);
   setTimeout(async () => {
     console.log("disabled for now");
@@ -23,7 +28,7 @@ export default async function robotAction(chatLog, setChatLog, setLoading) {
         },
         body: JSON.stringify({
           chat: messageToSend,
-          id: timestamp + messageToSend,
+          id: sessionId,
         }),
       }
     )
