@@ -87,7 +87,7 @@ main {
   margin: 0;
 }
 
-.steve {
+.khalifa {
   border-radius: 8px 8px 8px 0px;
   color: #266b7a;
   background-color: #b9e1ea;
@@ -115,7 +115,7 @@ main {
   text-align: right;
 }
 
-.element-steve .name-timestamp {
+.element-khalifa .name-timestamp {
   text-align: left;
 }
 
@@ -135,7 +135,7 @@ main {
   order: 2;
 }
 
-.chat.steve.loading {
+.chat.khalifa.loading {
   padding: 0 10px;
   height: 25px;
 }

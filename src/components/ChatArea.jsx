@@ -10,7 +10,7 @@ function ChatArea({ language, loading, message, chatLog }) {
           <div
             key={message.time}
             className={`chat-element ${
-              message.name === "user" ? "element-user" : "element-steve"
+              message.name === "user" ? "element-user" : "element-khalifa"
             }`}
           >
             <img
@@ -33,7 +33,7 @@ function ChatArea({ language, loading, message, chatLog }) {
                 <div
                   key={index}
                   className={`chat ${
-                    message.name === "user" ? "user" : "steve"
+                    message.name === "user" ? "user" : "khalifa"
                   }`}
                 >
                   <p>{chats}</p>
@@ -45,11 +45,11 @@ function ChatArea({ language, loading, message, chatLog }) {
                 }`}
               >
                 {language === "EN" && (
-                  <p>{message.name === "user" ? "User" : " Steve"}</p>
+                  <p>{message.name === "user" ? "User" : "Khalifa"}</p>
                 )}
                 <p>{message.time === 0 ? "" : message.time}</p>
                 {language === "AR" && (
-                  <p>{message.name === "user" ? "المستخدم" : "سيف"}</p>
+                  <p>{message.name === "user" ? "المستخدم" : "خليفة"}</p>
                 )}
               </div>
             </div>
@@ -64,11 +64,11 @@ function ChatArea({ language, loading, message, chatLog }) {
             alt={`robot profile pic`}
           />
           <div className={`chat-wrapper`}>
-            <div className={`chat steve loading`}>
+            <div className={`chat khalifa loading`}>
               <img src={textLoading} className="loading-gif" alt="loading..." />
             </div>
             <p className="name-timestamp">
-              {language === "EN" ? " Steve" : "سيف"}
+              {language === "EN" ? " Khalifa" : "خليفة"}
             </p>
           </div>
         </div>
