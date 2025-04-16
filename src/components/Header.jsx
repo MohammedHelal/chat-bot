@@ -6,7 +6,9 @@ function Header({ language, setLanguage }) {
     <header>
       <div className="title-flex">
         <img src={robot} className="robot" alt="robot waving profile pic" />
-        <h4>{language === "EN" ? "AI bot Steve" : "الذكاء الإصطناعي سيف"}</h4>
+        <h4>
+          {language === "EN" ? "AI bot Khalifa" : "الذكاء الإصطناعي خليفة"}
+        </h4>
       </div>
 
       <button
