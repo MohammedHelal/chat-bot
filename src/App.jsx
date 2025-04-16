@@ -83,7 +83,7 @@ function App() {
           message: [
             language === "EN"
               ? "Hello I'm Masaakin's AI chat bot Khalifa, I'm happy to answer any questions you have. How may I help you?"
-              : "مرحبا أنا خليفة، الذكاء الإصطناعي لشركة مساكن، كيف يمكنني أن أخدمك؟",
+              : "مرحبا بك أنا خليفة، الذكاء الإصطناعي لشركة مساكن، كيف يمكنني أن أخدمك؟",
           ],
         },
       ]);
