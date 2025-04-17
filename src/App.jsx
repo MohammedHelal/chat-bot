@@ -91,8 +91,6 @@ function App() {
   }, [language]);
 
   useEffect(() => {
-    localStorage.setItem("chatLog", JSON.stringify(chatLog));
-
     if (chatLog.length > 0 && chatLog[chatLog.length - 1].name === "user") {
       robotAction(chatLog, setChatLog, setLoading, sessionId);
     }
@@ -102,12 +100,7 @@ function App() {
     <div className={`main ${language === "AR" ? "arabic" : ""}`}>
       <Header language={language} setLanguage={setLanguage} />
       <main>
-        <ChatArea
-          language={language}
-          loading={loading}
-          message={message}
-          chatLog={chatLog}
-        />
+        <ChatArea language={language} loading={loading} chatLog={chatLog} />
         <MessageArea
           language={language}
           message={message}

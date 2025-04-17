@@ -35,27 +35,15 @@ function MessageArea({ language, message, setMessage, chatLog, setChatLog }) {
 
       setChatLog(arr);
     } else {
-      if (chatLog.length >= 10) {
-        let arr = [...chatLog];
-        arr.shift();
-        arr.push({
+      setChatLog((prevState) => [
+        ...prevState,
+        {
           name: "user",
           date: timestamp.split(", ")[0],
           time: timestamp.split(", ")[1],
-          message: message,
-        });
-        setChatLog(arr);
-      } else {
-        setChatLog((prevState) => [
-          ...prevState,
-          {
-            name: "user",
-            date: timestamp.split(", ")[0],
-            time: timestamp.split(", ")[1],
-            message: [message],
-          },
-        ]);
-      }
+          message: [message],
+        },
+      ]);
     }
 
     setMessage("");
