@@ -1,8 +1,31 @@
 import robot from "../assets/robot-waving-2.jpg";
 import user from "../assets/user-profile.jpg";
 import textLoading from "../assets/text-loading-animation.gif";
+//import languageEncoding from "detect-file-encoding-and-language";
 
 function ChatArea({ language, loading, chatLog }) {
+  function detectInputLanguage(text) {
+    //Dictionary for Unicode range of the languages
+    var langdictionary = {
+      english: /^[A-Za-z0-9 !@#$%^&*)(+=.,;:"'?_-]+$/,
+      arabic: /[\u0600-\u06FF]/,
+      persian: /[\u0750-\u077F]/,
+      Hebrew: /[\u0590-\u05FF]/,
+      Syriac: /[\u0700-\u074F]/,
+      Bengali: /[\u0980-\u09FF]/,
+      Ethiopic: /[\u1200-\u137F]/,
+      "Greek and Coptic": /[\u0370-\u03FF]/,
+      Georgian: /[\u10A0-\u10FF]/,
+      Thai: /[\u0E00-\u0E7F]/,
+    };
+
+    for (const [key, value] of Object.entries(langdictionary)) {
+      if (value.test(text)) {
+        return key;
+      }
+    }
+  }
+
   return (
     <section className="chat-area">
       {chatLog.map((chat) => {
@@ -27,16 +50,21 @@ function ChatArea({ language, loading, chatLog }) {
                 chat.name === "user" ? "user-wrapper" : ""
               }`}
             >
-              {chat.message.map((chats, index) => (
-                <div
-                  key={index}
-                  className={`chat ${
-                    chat.name === "user" ? "user" : "khalifa"
-                  }`}
-                >
-                  <p>{chats}</p>
-                </div>
-              ))}
+              {chat.message.map((chats, index) => {
+                let langNow = detectInputLanguage(chats);
+                //console.log(langNow + ": " + chats);
+
+                return (
+                  <div
+                    key={index}
+                    className={`chat ${
+                      chat.name === "user" ? "user" : "khalifa"
+                    } ${langNow === "english" ? "english" : "arabic"}`}
+                  >
+                    <p>{chats}</p>
+                  </div>
+                );
+              })}
               <div
                 className={`name-timestamp ${
                   language === "AR" ? "arabic" : ""

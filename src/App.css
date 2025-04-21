@@ -11,6 +11,10 @@
   text-align: right;
 }
 
+.english {
+  text-align: left;
+}
+
 header {
   width: 100%;
   height: 65px;

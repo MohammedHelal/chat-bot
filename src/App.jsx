@@ -49,7 +49,6 @@ function App() {
     }
 
     let cookieSessionId = readCookie("sessionkey");
-    console.log(cookieSessionId);
 
     if (cookieSessionId) {
       setSessionId(cookieSessionId);
@@ -97,7 +96,7 @@ function App() {
   }, [chatLog]);
 
   return (
-    <div className={`main ${language === "AR" ? "arabic" : ""}`}>
+    <div className={`main`}>
       <Header language={language} setLanguage={setLanguage} />
       <main>
         <ChatArea language={language} loading={loading} chatLog={chatLog} />
