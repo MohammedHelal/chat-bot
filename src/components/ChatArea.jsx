@@ -52,7 +52,7 @@ function ChatArea({ language, loading, chatLog }) {
             >
               {chat.message.map((chats, index) => {
                 let langNow = detectInputLanguage(chats);
-                console.log(langNow + ": " + chats);
+                //console.log(langNow + ": " + chats);
 
                 return (
                   <div
