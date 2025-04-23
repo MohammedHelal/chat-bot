@@ -19,7 +19,7 @@ export default async function robotAction(
     let messageToSend = await chatLog[chatLog.length - 1].message.join(", ");
 
     await fetch(
-      "https://momar.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
+      "https://mohoma.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
       {
         method: "POST",
         headers: {
