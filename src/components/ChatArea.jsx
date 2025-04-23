@@ -7,8 +7,8 @@ function ChatArea({ language, loading, chatLog }) {
   function detectInputLanguage(text) {
     //Dictionary for Unicode range of the languages
     var langdictionary = {
-      english: /^[A-Za-z0-9 !@#$%^&*)(+=.,;:"'?_-\s\S]+$/,
-      arabic: /[\u0600-\u06FF]/,
+      english: /^[A-Za-z0-9 !@#$%^&*)(+=.,;:"'?_-]+$/m,
+      arabic: /[\u0600-\u06FF]/m,
       persian: /[\u0750-\u077F]/,
       Hebrew: /[\u0590-\u05FF]/,
       Syriac: /[\u0700-\u074F]/,
