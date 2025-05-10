@@ -1,6 +1,6 @@
 import React from "react";
 
-function MessageArea({ language, message, setMessage, chatLog, setChatLog }) {
+function MessageForm({ language, message, setMessage, chatLog, setChatLog }) {
   function messageChangeHandler(e) {
     let value = e.target.value;
     setMessage(value);
@@ -48,35 +48,36 @@ function MessageArea({ language, message, setMessage, chatLog, setChatLog }) {
 
     setMessage("");
   }
+
   return (
-    <section className="message-area">
-      <form
-        className={`message-form ${language === "AR" ? "arabic" : ""}`}
-        onSubmit={submitHandler}
-      >
-        {language === "AR" && (
-          <button type="submit" className="message-form-submit-btn">
-            <i className="fa-solid fa-paper-plane fa-xl"></i>
-          </button>
-        )}
-        <textarea
-          id="message"
-          name="message"
-          rows="2"
-          cols="40"
-          placeholder={`${language === "EN" ? "Write a message" : "أكتب سؤال"}`}
-          value={message}
-          onChange={messageChangeHandler}
-          onKeyDown={onEnterPress}
-        ></textarea>
-        {language === "EN" && (
-          <button type="submit" className="message-form-submit-btn">
-            <i className="fa-solid fa-paper-plane fa-xl"></i>
-          </button>
-        )}
-      </form>
-    </section>
+    <form
+      className={`message-form ${
+        language === "AR" ? "arabic" : ""
+      } rounded-b-[4px]`}
+      onSubmit={submitHandler}
+    >
+      {language === "AR" && (
+        <button type="submit" className="submit-btn ar-btn">
+          <i className="fa-solid fa-paper-plane fa-lg"></i>
+        </button>
+      )}
+      <textarea
+        id="message"
+        name="message"
+        rows="2"
+        cols="40"
+        placeholder={`${language === "EN" ? "Write a message" : "أكتب سؤال"}`}
+        value={message}
+        onChange={messageChangeHandler}
+        onKeyDown={onEnterPress}
+      ></textarea>
+      {language === "EN" && (
+        <button type="submit" className="submit-btn en-btn">
+          <i className="fa-solid fa-paper-plane fa-lg"></i>
+        </button>
+      )}
+    </form>
   );
 }
 
-export default MessageArea;
+export default MessageForm;

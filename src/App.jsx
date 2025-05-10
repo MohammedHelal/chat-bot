@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import Header from "./components/Header";
 import ChatArea from "./components/ChatArea";
-import MessageArea from "./components/MessageArea";
+import MessageArea from "./components/message/MessageArea";
 
 import robotAction from "./robotAction";
 import "./App.css";
@@ -96,28 +96,22 @@ function App() {
   }, [chatLog]);
 
   return (
-    <div className={`main`}>
-      <Header language={language} setLanguage={setLanguage} />
-      <main>
-        <ChatArea language={language} loading={loading} chatLog={chatLog} />
-        <MessageArea
-          language={language}
-          message={message}
-          setMessage={setMessage}
-          chatLog={chatLog}
-          setChatLog={setChatLog}
-        />
-      </main>
+    <div className="main-wrapper">
+      <div className={`main`}>
+        <Header language={language} setLanguage={setLanguage} />
+        <main>
+          <ChatArea language={language} loading={loading} chatLog={chatLog} />
+          <MessageArea
+            language={language}
+            message={message}
+            setMessage={setMessage}
+            chatLog={chatLog}
+            setChatLog={setChatLog}
+          />
+        </main>
+      </div>
     </div>
   );
 }
 
 export default App;
-
-/*
-language === "EN"
-? "Hello I'm Masaakin's AI chat bot Steve, I'm happy to answer any questions you have. How may I help you?"
-: "مرحبا أنا سيف الذكاء الإصطناعي لشركة مساكن, كيف يمكنني أن أساعدك؟",
-]
-
-*/

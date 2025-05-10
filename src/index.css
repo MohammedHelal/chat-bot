@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@source "./testing/SimpleRecordButton.jsx";
+
 * {
   box-sizing: border-box;
 }
@@ -21,6 +24,7 @@
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  justify-items: flex-end;
+  width: 100dvw;
   min-height: 100dvh;
 }

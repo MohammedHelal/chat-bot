@@ -51,19 +51,30 @@ function ChatArea({ language, loading, chatLog }) {
               }`}
             >
               {chat.message.map((chats, index) => {
-                let langNow = detectInputLanguage(chats);
-                //console.log(langNow + ": " + chats);
+                if (typeof chats === "string") {
+                  let langNow = detectInputLanguage(chats);
+                  //console.log(langNow + ": " + chats);
 
-                return (
-                  <div
-                    key={index}
-                    className={`chat ${
-                      chat.name === "user" ? "user" : "khalifa"
-                    } ${langNow === "english" ? "english" : "arabic"}`}
-                  >
-                    <p>{chats}</p>
-                  </div>
-                );
+                  return (
+                    <div
+                      key={index}
+                      className={`chat ${
+                        chat.name === "user" ? "user" : "khalifa"
+                      } ${langNow === "english" ? "english" : "arabic"}`}
+                    >
+                      <p>{chats}</p>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <audio key={index} className="chat" controls>
+                      <source
+                        src={URL.createObjectURL(chats)}
+                        type="audio/wav"
+                      />
+                    </audio>
+                  );
+                }
               })}
               <div
                 className={`name-timestamp ${
