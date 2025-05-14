@@ -118,6 +118,9 @@ function AudioMessage({ chatLog, setChatLog }) {
         },
       ]);
     }
+
+    setAudioBlob(null);
+    setRecordingTime(0);
   }
 
   return (

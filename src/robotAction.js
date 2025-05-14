@@ -22,15 +22,14 @@ export default async function robotAction(
 
     if (detectAudio.length <= 0) {
       let messageToSend = await chatLog[chatLog.length - 1].message.join(", ");
-      console.log(detectAudio.length <= 0);
-
+      //console.log(detectAudio.length <= 0);
+      //
+      //
       await fetch(
         "https://mhelalninetytwo.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             chat: messageToSend,
             id: sessionId,
@@ -55,7 +54,7 @@ export default async function robotAction(
           console.error(err);
         });
     } else {
-      /* 
+      /*
           headers: {
             "content-type": "multipart/form-data",
           },
@@ -66,6 +65,9 @@ export default async function robotAction(
       formData.append("id", sessionId);
 
       console.log(formData);
+
+      //https://mhelalninetytwo.app.n8n.cloud/webhook-test/88709e48-ff6c-4417-a555-d6f095d42382
+      //https://mhelalninetytwo.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382
 
       await fetch(
         "https://mhelalninetytwo.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
