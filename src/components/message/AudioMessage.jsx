@@ -145,8 +145,8 @@ function AudioMessage({ chatLog, setChatLog }) {
           <source src={URL.createObjectURL(audioBlob)} type="audio/wav" />
         </audio>
       ) : (
-        <div className="">
-          <div className="relative w-[300px] h-[39px] flex items-center rounded-sm px-[8px] bg-[#b9e1ea]">
+        <div className="w-[75%]">
+          <div className="relative w-full h-[39px] flex items-center rounded-sm px-[8px] bg-[#b9e1ea]">
             <div
               className={`absolute h-[39px] left-0 top-0 bg-[#004f61a6] rounded-l-sm`}
               style={{
