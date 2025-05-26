@@ -6,7 +6,7 @@ export default async function robotAction(
 ) {
   setLoading(true);
   setTimeout(async () => {
-    let timestamp = Date.now(); // This would be the timestamp you want to format
+    let timestamp = Date.now();
     timestamp = new Intl.DateTimeFormat("en-US", {
       year: "numeric",
       month: "2-digit",
@@ -54,20 +54,12 @@ export default async function robotAction(
           console.error(err);
         });
     } else {
-      /*
-          headers: {
-            "content-type": "multipart/form-data",
-          },
-      */
       const formData = new FormData();
       formData.append("audio_data", detectAudio[0], "voice-note.wav");
       formData.append("type", "audio/wav");
       formData.append("id", sessionId);
 
       console.log(formData);
-
-      //https://mhelalninetytwo.app.n8n.cloud/webhook-test/88709e48-ff6c-4417-a555-d6f095d42382
-      //https://mhelalninetytwo.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382
 
       await fetch(
         "https://mhelalninetytwo.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
