@@ -26,7 +26,7 @@ export default async function robotAction(
       //
       //
       await fetch(
-        "https://mhelalninetytwo.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
+        "https://moah.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -62,7 +62,7 @@ export default async function robotAction(
       console.log(formData);
 
       await fetch(
-        "https://mhelalninetytwo.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
+        "https://moah.app.n8n.cloud/webhook/88709e48-ff6c-4417-a555-d6f095d42382",
         {
           method: "POST",
           body: formData,
